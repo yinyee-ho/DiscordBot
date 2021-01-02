@@ -29,9 +29,9 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'ping'){
-        message.channel.send('pong!');
+        client.commands.get('ping').execute(message,args);
     } else if (command == 'youtube') {
-        message.channel.send('https://www.youtube.com/channel/UC5CBocGMpVL_lkjlG36RjUA');
+        client.commands.get('youtube').execute(message,args);
     }
 })
 
