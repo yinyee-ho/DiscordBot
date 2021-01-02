@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client(); 
 
+// add token
+const token = '';
+
 const prefix = '-';
 
 const fs = require('fs');
@@ -26,10 +29,11 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'ping'){
-        client.commands.get('ping').execute(message,args);
+        message.channel.send('pong!');
     } else if (command == 'youtube') {
-        client.commands.get('youtube').execute(message,args);
+        message.channel.send('https://www.youtube.com/channel/UC5CBocGMpVL_lkjlG36RjUA');
     }
+    // TODO: add more commands 
 })
 
 client.login(token);
