@@ -33,7 +33,6 @@ client.on('message', message => {
     } else if (command == 'youtube') {
         message.channel.send('https://www.youtube.com/channel/UC5CBocGMpVL_lkjlG36RjUA');
     }
-    // TODO: add more commands 
 })
 
 client.login(token);
