@@ -3,7 +3,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client(); 
 
 // add token
-const token = '';
+const token = 'Nzk0NTMzNTg2MTU3Njk5MDgy.X-8NEA.P-2m_MxsGH-q_rrkpkoZU_JKE8A';
+
+//const token = '';
 
 const prefix = '-';
 
@@ -28,11 +30,15 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ + /);
     const command = args.shift().toLowerCase();
 
+    if(command === 'command'){
+        client.commands.get('command').execute(message, args, Discord);
+    }
+
     if(command === 'ping'){
         client.commands.get('ping').execute(message,args);
     } else if (command == 'youtube') {
         client.commands.get('youtube').execute(message,args);
-    }
+    } 
 })
 
 client.login(token);
